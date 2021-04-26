@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <div class="container-fluid mt-3">
+        <div class="row ">
+
+            <!--filter-->
+            <div class="col-lg-2 mx-auto">
+                <div class="list-group">
+                    <h3 class="" >Deshbord</h3>
+
+                    <a href="/" class="list-group-item  list-goup-item-action" >Employee</a>
+
+                </div>
+
+            </div>
+
+
+           <div id="products" class="col-lg-10 mx-auto">
+               <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Gender</th>
+        <th scope="col">email</th>
+        <th scope="col">PhoneNo</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for empl in emp %}
+    <tr>
+      <td>{{empl.id}}</td>
+      <td>{{empl.name}}</td>
+      <td>{{empl.age}}</td>
+      <td>{{empl.gender}}</td>
+        <td>{{empl.email}}</td>
+        <td>{{empl.phoneNo}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+           </div>
+
+
+
+        </div>
+
+
+  </div>
+
+
+
+{% endblock %}

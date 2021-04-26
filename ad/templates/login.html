@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+    <div class="container-fluid mt-3">
+        <div class="row ">
+
+            <!--filter-->
+            <div class="col-lg-2 mx-auto">
+                <div class="list-group">
+                    <h3 class="" >Deshbord</h3>
+                    <a href="/" class="list-group-item  list-goup-item-action" >Employee</a>
+
+                </div>
+
+            </div>
+
+
+           <div id="products" class="col-lg-10 mx-auto">
+               <div class="p-1 m-1">
+                   <div class="col-lg-4 mt-4 mb-4 mx-auto  ">
+                       <h3 class="alert alert-light  ">Login</h3>
+                       <form action="/login/" name="form1" method="post" onsubmit="return(validate());">
+                        {% csrf_token %}
+                           {% if error %}
+                        <div class="alert alert-danger" role="alert">
+                             {{error}}
+                        </div>
+                             {% endif %}
+
+                           <div class="form-group">
+                                <label for="">Email </label>
+                                <input type="email"  required name="email" value="email1" id="" class="form-control form-control-sm"  aria-required="true" >
+
+                           </div>
+                           <div class="form-group">
+                                <label for="">Password </label>
+                                <input type="password" name="password" id="" class="form-control form-control-sm" placeholder="*********" >
+
+                           </div>
+
+
+                            <div class="form-group">
+
+                             <input type="submit" value="login" class="btn btn-sm btn-info mt-2 form-control-sm " >
+
+                             </div>
+
+
+                        </form>
+                   </div>
+
+               </div>
+
+           </div>
+
+
+
+        </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
